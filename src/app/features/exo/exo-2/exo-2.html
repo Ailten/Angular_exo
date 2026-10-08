@@ -1,0 +1,55 @@
+<p>Exo 2 !</p>
+
+<div>
+
+    <label for="button-on-off">
+        button On/Off :
+    </label>
+    <input 
+        id="button-on-off" 
+        name="button-on-off" 
+        type="button" 
+        [(value)]="isOne"
+        (click)="clickOnOff()"/>
+    <input type="button" value="enable" [disabled]="!isOne"/>
+
+</div>
+
+<div>
+
+    <label for="button-click-count">
+        button click-count :
+    </label>
+    <input 
+        id="button-click-count" 
+        name="button-click-count" 
+        type="button" 
+        [(value)]="countClick"
+        (click)="clickCountIncrement()"/>
+
+</div>
+
+<div>
+    <input 
+        type="text"
+        [(ngModel)]="myVariable"/>
+    <span>contend var : {{ myVariable | uppercase }}</span>
+</div>
+
+
+<hr/>
+
+
+<!--
+<div>
+    <input 
+        type="text"
+        [(ngModel)]="myVariable"/>
+    <span>contend var : {{ myVariable | uppercase }}</span>
+</div>
+<div>
+    <input
+        (keyup.enter)="onKeyUpEnter($event)"/>
+    <span>(press enter to console.log the value)</span>
+</div>
+-->

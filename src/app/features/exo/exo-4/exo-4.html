@@ -1,0 +1,41 @@
+<p>Exo 4!</p>
+
+
+<div>
+
+    <label>is on : </label>
+    <input
+        type="button"
+        [value]="isOn"
+        (click)="clickIsOn()">
+
+    <br/>
+
+    @if(isOn){
+        <span> is On !</span>
+    }
+    @else {
+        <span> is Off !</span>
+    }
+
+    <br/>
+
+    @switch(isOn){
+        @case(true) { <span> is On !</span>}
+        @case(false) { <span> is Off !</span>}
+    }
+
+    <br/>
+
+    @let isOnStr = (isOn? 'On': 'Off');
+    <span> is {{ isOnStr }} !</span>
+
+
+    <hr/>
+
+
+    <span>improve the nav menu.</span>
+
+
+
+</div>

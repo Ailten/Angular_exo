@@ -1,0 +1,42 @@
+
+
+<div>
+
+    <h2>Menu</h2>
+
+    <nav>
+        <ul>
+            <!--
+            @for(link of links; track link){
+                <li>
+                    <a [routerLink]="link.url">{{ link.name }}</a>
+                </li>
+            }
+            -->
+
+            @for(link of links; track link){
+                <li>
+                    <span (click)="selectLink($event)">{{ link.name }}</span>
+
+                    @if(linkSelected === link.name){
+                        <ul>
+                            @for(linkChildren of link.urlChildren; track linkChildren){
+                            <li>
+                                @let urlChildren = link.url + linkChildren;
+                                
+                                <a 
+                                    [routerLink]="urlChildren" 
+                                    routerLinkActive="link-active"
+                                    >
+                                    {{ linkChildren }}
+                                </a>
+                            </li>
+                            }
+                        </ul>
+                    }
+                </li>
+            }
+        </ul>
+    </nav>
+    
+</div>
