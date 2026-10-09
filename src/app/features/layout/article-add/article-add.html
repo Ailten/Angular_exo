@@ -1,0 +1,27 @@
+
+
+<div>
+
+    <hr/>
+
+    <p>add article</p>
+
+    <label for="name-article">name :</label>
+    <input 
+        type="text"
+        id="name-article"
+        [value]="articleName()"/>
+
+    <br/>
+
+    <label for="price-article">price :</label>
+    <input 
+        type="number"
+        id="price-article"
+        [value]="articlePrice()"/>
+
+    <br/>
+
+    <button (click)="addArticle()">Add</button>
+
+</div>

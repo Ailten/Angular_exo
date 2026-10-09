@@ -1,0 +1,13 @@
+
+<p>Exo 5 !</p>
+
+
+
+<div>
+    <div>
+        <app-article-list [articlesToRender]="articles" (indexArticleToDel)="removeArtile($event)"></app-article-list>
+    </div>
+    <div>
+        <app-article-add (createArticle)="addArticle($event)"></app-article-add>
+    </div>
+</div>

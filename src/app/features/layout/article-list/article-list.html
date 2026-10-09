@@ -1,0 +1,16 @@
+
+
+
+<div>
+    @for(article of articlesToRender(); track article.name; let indexArticle = $index){
+        <p>
+            <span>({{ indexArticle }})</span> -
+            <span>name : {{ article.name }}</span> |
+            <span>price : {{ article.price | currency : 'EUR' : 'symbol' : '1.2-2'}}</span> |
+            <button (click)="deleteArticle($event, indexArticle)">delete</button>
+        </p>
+    }
+    @empty {
+        <p>aucun articles.</p>
+    }
+</div>
