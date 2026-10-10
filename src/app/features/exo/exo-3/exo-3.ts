@@ -1,41 +1,39 @@
-import { Component, OnInit, signal, WritableSignal } from '@angular/core';
+import { Component, OnInit, signal, WritableSignal, ChangeDetectionStrategy } from '@angular/core';
 import { ToTimeStrPipe } from '../../layout/toTimeStr/to-time-str-pipe';
 
 @Component({
   selector: 'app-exo-3',
   imports: [ToTimeStrPipe],
   templateUrl: './exo-3.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './exo-3.scss',
 })
 export class Exo3 implements OnInit {
+  timeSeconde: WritableSignal<number> = signal(0);
+  intervalTimeCount: NodeJS.Timeout | null = null;
 
-  timeSeconde : WritableSignal<number> = signal(0);
-  intervalTimeCount: NodeJS.Timeout|null = null; 
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   start(): void {
     console.log('start');
-    if(this.intervalTimeCount !== null){
+    if (this.intervalTimeCount !== null) {
       console.log('already start !');
       return;
     }
 
-    this.intervalTimeCount = setInterval(() => { 
+    this.intervalTimeCount = setInterval(() => {
       this.addTime();
     }, 1000);
   }
   pause(): void {
     console.log('pause');
-    if(this.intervalTimeCount === null){
+    if (this.intervalTimeCount === null) {
       console.log('already pause !');
       return;
     }
 
     clearInterval(this.intervalTimeCount);
     this.intervalTimeCount = null;
-
   }
   reset(): void {
     console.log('reset');
@@ -43,8 +41,6 @@ export class Exo3 implements OnInit {
   }
 
   addTime(addSeconde: number = 1): void {
-    this.timeSeconde.update(v => v + addSeconde);
+    this.timeSeconde.update((v) => v + addSeconde);
   }
-
-
 }

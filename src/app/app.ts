@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavBar } from './features/layout/nav-bar/nav-bar';
 
@@ -6,10 +6,9 @@ import { NavBar } from './features/layout/nav-bar/nav-bar';
   selector: 'app-root',
   imports: [RouterOutlet, NavBar],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrl: './app.scss',
 })
 export class App {
-
-  title: string = "Mon Site !";
-
+  title: string = 'Mon Site !';
 }

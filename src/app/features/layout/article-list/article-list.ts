@@ -1,4 +1,4 @@
-import { Component, input, output, model } from '@angular/core';
+import { Component, input, output, model, ChangeDetectionStrategy } from '@angular/core';
 import { ArticleAdd } from '../article-add/article-add';
 import { Article } from '../article/article';
 import { CurrencyPipe } from '@angular/common';
@@ -7,10 +7,10 @@ import { CurrencyPipe } from '@angular/common';
   selector: 'app-article-list',
   imports: [CurrencyPipe],
   templateUrl: './article-list.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './article-list.scss',
 })
 export class ArticleList {
-
   articlesToRender = input<Article[]>([]);
 
   indexArticleToDel = output<number>();
@@ -18,5 +18,4 @@ export class ArticleList {
     console.log(indexArticle);
     this.indexArticleToDel.emit(indexArticle);
   }
-
 }

@@ -1,17 +1,28 @@
-
 {
-    "articles": [
-        {
-            "id": 1,
-            "name": "Livre de cuisine"
-        },
-        {
-            "id": 2,
-            "name": "Casserole"
-        },
-        {
-            "id": 3,
-            "name": "Matela"
-        }
-    ]
+  "articles": [
+    {
+      "id": 1,
+      "name": "Livre de cuisine",
+      "price": 10
+    },
+    {
+      "id": 2,
+      "name": "Casserole",
+      "price": 10
+    },
+    {
+      "id": 3,
+      "name": "Matela",
+      "price": 10
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@bstorm.be",
+      "passwordHash": "8388a5dd18a48338d07466d1a0b886fa7969adbfa82a58a25f042b9bf4809930",
+      "salt": "9550e9b8066f18d10fc19d4757aeeef5",
+      "role": "admin",
+      "id": 1
+    }
+  ]
 }

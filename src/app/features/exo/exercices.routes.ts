@@ -5,6 +5,7 @@ import { Exo3 } from './exo-3/exo-3';
 import { Exo4 } from './exo-4/exo-4';
 import { Exo5 } from './exo-5/exo-5';
 import { Exo6 } from './exo-6/exo-6';
+import { Exo7 } from './exo-7/exo-7';
 
 
 export const routes: Routes = [
@@ -15,5 +16,6 @@ export const routes: Routes = [
     {path:'exo-4', component: Exo4},
     {path:'exo-5', component: Exo5},
     {path:'exo-6', component: Exo6},
+    {path:'exo-7', component: Exo7},
 
 ];

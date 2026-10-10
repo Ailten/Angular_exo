@@ -1,14 +1,21 @@
-import { Component , signal, output, OutputEmitterRef, WritableSignal} from '@angular/core';
+import {
+  Component,
+  signal,
+  output,
+  OutputEmitterRef,
+  WritableSignal,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { Article } from '../article/article';
 
 @Component({
   selector: 'app-article-add',
   imports: [],
   templateUrl: './article-add.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './article-add.scss',
 })
 export class ArticleAdd {
-
   createArticle = output<Article>();
 
   articleName: WritableSignal<string> = signal('');
@@ -17,7 +24,7 @@ export class ArticleAdd {
   addArticle() {
     let newArticle: Article = {
       name: this.articleName(),
-      price: this.articlePrice()
+      price: this.articlePrice(),
     };
 
     this.createArticle.emit(newArticle);
@@ -26,5 +33,4 @@ export class ArticleAdd {
     this.articleName.set('');
     this.articlePrice.set(0.0);
   }
-
 }

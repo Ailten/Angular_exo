@@ -1,21 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 interface Link {
   name: string;
   url: string;
-  urlChildren: string[]
+  urlChildren: string[];
 }
 
 @Component({
   selector: 'app-nav-bar',
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './nav-bar.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './nav-bar.scss',
 })
-
 export class NavBar {
-
   //links: Link[] = [
   //  {name: 'Home', url: '/home'},
   //  {name: 'Exo Un', url: '/exercices/exo-1'},
@@ -25,24 +24,17 @@ export class NavBar {
   //]
 
   links: Link[] = [
-    {name: 'Home', url: '/home', urlChildren: [
-      '/home'
-    ]},
-    {name: 'Exercices', url: '/exercices', urlChildren: [
-      '/exo-1',
-      '/exo-2',
-      '/exo-3',
-      '/exo-4',
-      '/exo-5',
-      '/exo-6',
-    ]},
+    { name: 'Home', url: '/home', urlChildren: ['/home'] },
+    {
+      name: 'Exercices',
+      url: '/exercices',
+      urlChildren: ['/exo-1', '/exo-2', '/exo-3', '/exo-4', '/exo-5', '/exo-6', '/exo-7'],
+    },
   ];
-
 
   linkSelected: string = '';
 
   selectLink(event: Event): void {
     this.linkSelected = (event.target as HTMLElement).innerText;
   }
-
 }

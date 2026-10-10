@@ -1,0 +1,32 @@
+<p>Exo 7 !</p>
+
+<p>example of interaction with service (list all).</p>
+
+
+<div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>price</th>
+            </tr>
+        </thead>
+    </table>
+    <tbody>
+        @for(article of articles(); track article.id){
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.name }}</td>
+                <td>{{ article.price | currency:'EUR':'symbol':'1.2-2' }}</td>
+            </tr>
+        }
+        @empty {
+            <tr>
+                <td rowspan="3">aucun article.</td>
+            </tr>
+        }
+    </tbody>
+
+</div>
