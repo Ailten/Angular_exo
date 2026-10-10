@@ -34,6 +34,7 @@ export class NavBar {
       '/exo-3',
       '/exo-4',
       '/exo-5',
+      '/exo-6',
     ]},
   ];
 

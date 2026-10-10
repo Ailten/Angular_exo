@@ -1,0 +1,17 @@
+
+{
+    "articles": [
+        {
+            "id": 1,
+            "name": "Livre de cuisine"
+        },
+        {
+            "id": 2,
+            "name": "Casserole"
+        },
+        {
+            "id": 3,
+            "name": "Matela"
+        }
+    ]
+}
