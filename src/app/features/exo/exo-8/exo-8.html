@@ -1,0 +1,52 @@
+<p>Exo 8</p>
+
+
+<p>example form add</p>
+
+<div>
+    <p>form add article</p>
+    <form (submit)="submitAddArticle($event)">
+        <label>Name</label>
+        <input [formField]="articleToAddForm.name"/>
+        <br/>
+        <label>Price</label>
+        <input type="number" [formField]="articleToAddForm.price"/>
+        @for(error of articleToAddForm.price().errors(); track $index){
+            <p style="color: red;">
+                {{ error.message | json }}
+            </p>
+        }
+        <br/>
+        <button type="submit">Add</button>
+    </form>
+</div>
+
+<hr/>
+
+<div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(article of articles(); track article.id){
+                <tr>
+                    <td>{{ article.id }}</td>
+                    <td>{{ article.name }}</td>
+                    <td>{{ article.price | currency:'EUR':'symbol':'1.2-2' }}</td>
+                </tr>
+            }
+            @empty {
+                <tr>
+                    <td rowspan="3">aucun article.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

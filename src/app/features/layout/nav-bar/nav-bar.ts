@@ -28,7 +28,15 @@ export class NavBar {
     {
       name: 'Exercices',
       url: '/exercices',
-      urlChildren: ['/exo-1', '/exo-2', '/exo-3', '/exo-4', '/exo-5', '/exo-6', '/exo-7'],
+      urlChildren: [
+        '/exo-1', 
+        '/exo-2', 
+        '/exo-3', 
+        '/exo-4', 
+        '/exo-5', 
+        '/exo-6', 
+        '/exo-7', 
+        '/exo-8'],
     },
   ];
 
